@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* The font-face rule allows the page to access and load fonts off the web. This gives the creator more options in the types of font that they are able to use as the only thing that they need to do is properly source the fonts. */
+@font-face {
+    font-family: Champagne;
+    src: url('cac_champagne.woff ') format('woff'),
+        url('cac_champagne.ttf') format('truetext');
+    font-family: Grunge;
+    src: url('1942.woff') format('woff'),
+        url('1942.ttf') format('truetext');
+    font-family: Dobkins;
+    src: url('DobkinPlain.woff') format('woff'),
+        url('DobkinPlain.ttf') format('truetext');
+}
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 1
+   
+   PHCT Typographic Style Sheet
+   Author: Maria De Jesus Rizo
+   Date:   9.6.18
+   
+   Filename: ph_styles.css
+
+*/
+/* All code written within a specific selector will only effect the element specified by the selector. This can at times change, however, as an element can inherit properties of selectors specified before it. */
+/* Structural Styles */
+/* By using the HTML selector and then using the background-color property within, we are telling the page that for all pages linked to this style sheets, the background color will be the color specifies in the line of code. This however can be overwritten later on in the code due to specificity if a more specific selector is given a different backround-color value.*/
+html {
+    background-color: hsl(91, 8%, 56%);
+}
+
+/* This is an example of the process described above as the body within the document is now a different color even though we had said that the HTML background would be another color value. Because this is more specific, it oevrwrites the previous value. */
+/* the font gamily property within the selector specifies the type of font that should be used within all body elements.  */
+body {
+    background-color: hsl(58, 31%, 84%);
+    font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+}
+
+/* Similar to what happened above, the assigned background color was overwritten and changed to the specified value below. */
+header {
+    background-color: black;
+}
+
+/* This selector  */
+p {
+    margin: 0px;
+    padding: 5px 25px 25px 25px;
+}
+
+body>p {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+address {
+    font-style: normal;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 10px 0px 10px;
+}
+
+/* Navigation Styles */
+nav {
+    font-family: ‘Trebuchet MS’, Helvetica, sans-serif, ;
+    padding: 10px 0px 10px
+}
+
+nav>ul>li>a:link,
+nav>ul>li>a:visited {
+    color: white;
+    text-decoration: none;
+    background-color: hsla(0, 0%, 42%, 0.4);
+}
+
+nav>ul>li>a:active,
+nav>ul>li>a:hover {
+    color: hsla(0, 0%, 100%, 0.7);
+    background-color: hsla(0, 0%, 42%, 0.7);
+}
+
+/* Section Styles */
+section.playbill h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0px;
+    padding: 20px 0px 10px 20px;
+}
+
+section#play1 {
+    background-color: hsl(240, 100%, 88%);
+}
+
+section#play2 {
+    background-color: hsl(25, 88%, 73%);
+}
+
+section#play3 {
+    background-color: hsl(0, 100%, 75%);
+}
+
+section#play4 {
+    background-color: hsl(296, 86%, 86%);
+}
+
+/* Description List Styles */
