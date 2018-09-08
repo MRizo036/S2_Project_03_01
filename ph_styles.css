@@ -1,16 +1,23 @@
 @charset "utf-8";
 
 /* The font-face rule allows the page to access and load fonts off the web. This gives the creator more options in the types of font that they are able to use as the only thing that they need to do is properly source the fonts. */
+/* Remember to put all different fonts into their own font face tag or else the web browse will not read the various fonts, only reconnizing the last one in the sequence.  */
 @font-face {
     font-family: Champagne;
     src: url('cac_champagne.woff ') format('woff'),
-        url('cac_champagne.ttf') format('truetext');
+        url('cac_champagne.ttf') format('truetype');
+}
+
+@font-face {
     font-family: Grunge;
     src: url('1942.woff') format('woff'),
-        url('1942.ttf') format('truetext');
-    font-family: Dobkins;
+        url('1942.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Dobkin;
     src: url('DobkinPlain.woff') format('woff'),
-        url('DobkinPlain.ttf') format('truetext');
+        url('DobkinPlain.ttf') format('truetype');
 }
 
 /*
@@ -33,28 +40,30 @@ html {
 }
 
 /* This is an example of the process described above as the body within the document is now a different color even though we had said that the HTML background would be another color value. Because this is more specific, it oevrwrites the previous value. */
-/* the font gamily property within the selector specifies the type of font that should be used within all body elements.  */
+/* the font family property within the selector specifies the type of font that should be used within all body elements.  */
 body {
     background-color: hsl(58, 31%, 84%);
     font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 }
 
-/* Similar to what happened above, the assigned background color was overwritten and changed to the specified value below. */
+/* Similar to what happened above, the assigned background color was overwritten and changed to the specified value below, in this case changing the color to black.*/
 header {
     background-color: black;
 }
 
-/* This selector  */
+/* This selector effect all paragraph tags within the HTML, creating a margin and padding around the words which puts more space between the text sections.*/
 p {
     margin: 0px;
     padding: 5px 25px 25px 25px;
 }
 
+/* Unlike the selector above, this selector affects all the paragraph elements within the body element. Within the body>p selector, the font-size property specifies what sie the font should be on the page.  */
 body>p {
     font-size: 1.1em;
     text-align: center;
 }
 
+/* This selector specifies styles for the address element within the HTML document. More specific, the font style element within the section specidies the text appearance, normal giving the font the no decorations. The text align property alighns the text within the section in the center horizontally. */
 address {
     font-style: normal;
     font-size: 0.9em;
@@ -63,11 +72,14 @@ address {
 }
 
 /* Navigation Styles */
-nav {
+/* Styles written within this section will affect any navigation elements within the HTML document, styling them as specified. Concerning the padding, the -top and -bottom section of the property specify which part of the padding should be changed.*/
+nav a {
     font-family: ‘Trebuchet MS’, Helvetica, sans-serif, ;
-    padding: 10px 0px 10px
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+/* The selector in this section of code specifies that the a which is the child of the li which is the child of the ul which is the child of the nav is going to be affected by the properties listed. The :link and :visited part of the selector specifies the state in which the link is in and how those states should be affected. The color property changes the color of the text itself while the background color property changes the the background color of the nav. The text decoration property within the selector specifies any special decoration that should be added onto the text, though in this case is gets ride of the underline.  */
 nav>ul>li>a:link,
 nav>ul>li>a:visited {
     color: white;
@@ -75,6 +87,7 @@ nav>ul>li>a:visited {
     background-color: hsla(0, 0%, 42%, 0.4);
 }
 
+/* The comment from above applys to this section while the only thing that is different is what states are being affected by the properties. */
 nav>ul>li>a:active,
 nav>ul>li>a:hover {
     color: hsla(0, 0%, 100%, 0.7);
@@ -82,6 +95,7 @@ nav>ul>li>a:hover {
 }
 
 /* Section Styles */
+/* The section.playbill h1 selector specifies that the styles written within will style all elements within a section under the class of playbill. This specifically applies the properties to the h1 elements within this section. */
 section.playbill h1 {
     font-size: 3em;
     font-weight: normal;
@@ -89,6 +103,7 @@ section.playbill h1 {
     padding: 20px 0px 10px 20px;
 }
 
+/* Properties within these selector will affect only the HTML elements with the id specified. */
 section#play1 {
     background-color: hsl(240, 100%, 88%);
 }
@@ -105,4 +120,35 @@ section#play4 {
     background-color: hsl(296, 86%, 86%);
 }
 
+/* Similar to what occured above, the properties within these selectors will only affect the HTML elements with the specifies id, though it specifically applies the styles to the h1 elements. */
+section#play1 h1 {
+    font-family: Champagne, cursive;
+}
+
+section#play2 h1 {
+    font-family: Grunge, ‘Times New Roman’, Times, serif;
+}
+
+section#play3 h1 {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+section#play4 h1 {
+    font-family: Dobkin, cursive;
+}
+
 /* Description List Styles */
+/* Styles within this section affect description lists within the HTML document. */
+/* The dt selector specifies that all properties within this selector will affect all dt elements within the HTML document */
+dt {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.4);
+}
+
+/* Similar to above,the dd selector specifies that all properties within this selector will affact all dd elements within the HTML document. */
+dd {
+    font-size: 1.3em;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
